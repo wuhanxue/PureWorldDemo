@@ -1,16 +1,11 @@
 ﻿<Properties StartupConfiguration="{A2FE0C11-AB08-D166-ACE3-20F22E01D2C9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ChangeScene.cs">
-    <Files>
-      <File FileName="Assets/WarControl.cs" Line="42" Column="42" />
-      <File FileName="Assets/ChangeScene.cs" Line="7" Column="5" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PureWorldDemo_3" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="Scripts" expanded="True" />
-              <Node name="ChangeScene.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -19,7 +14,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3415d4a4-cd62-473b-9652-0b1c2e0f394a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="92468073-681c-49ef-80e7-5caf7381efdc" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
