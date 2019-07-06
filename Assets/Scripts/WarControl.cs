@@ -11,6 +11,14 @@ public class WarControl : MonoBehaviour
     // 游戏对象
     public GameObject player;
     public GameObject enemy;
+    public int rows = 20;  // 地图范围 行
+    public int cols = 10;  // 列
+    private Transform mapHolder;   // 承装地图物品  方便管理
+
+    public GameObject[] enemyArray;    // 敌人 update by whx
+    public GameObject[] helperArray;    // 帮手 update by whx
+    private List<Vector2> positionList = new List<Vector2>();  // 存放位置信息  update by whx
+
     public GameObject actionPanel;
     public GameObject hpInfoPlayer;
     public GameObject hpInfoEnemy;
@@ -30,6 +38,7 @@ public class WarControl : MonoBehaviour
     {
         warInfoText.GetComponent<Text>().text = "战斗开始！";
         StartCoroutine(ScrollToBottom());
+        InstantiateMap();  // 初始化地图及物品
     }
 
     // Update is called once per frame
@@ -54,6 +63,10 @@ public class WarControl : MonoBehaviour
     public void AttackButtonOnclick()
     {
         StartCoroutine(Attack());
+        GameObject helper = GameObject.FindGameObjectWithTag("Player");
+        if (helper != null)
+           helper.SendMessage("Attack");
+        GameObject.FindGameObjectWithTag("Enemy").SendMessage("Attack");
     }
 
     /// <summary>
@@ -62,6 +75,9 @@ public class WarControl : MonoBehaviour
     public void DefendButtonOnclick()
     {
         StartCoroutine(Defend());
+        GameObject helper = GameObject.FindGameObjectWithTag("Player");
+        if (helper != null)
+            helper.SendMessage("Damage");
     }
 
     /// <summary>
@@ -129,6 +145,7 @@ public class WarControl : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         warInfoText.GetComponent<Text>().text += "\n玩家防御";
         StartCoroutine(ScrollToBottom());
+
         isPlayerDefend = true;
     }
 
@@ -137,4 +154,60 @@ public class WarControl : MonoBehaviour
         yield return new WaitForEndOfFrame();
         warInfoText.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
     }
+    
+
+    // 初始化地图和物品
+    private void InstantiateMap()
+    {
+        mapHolder = new GameObject("Map").transform;   // 创建一个叫map的空物体并将其transform赋值给mapholder
+        positionList.Clear();  // 清空历史数据
+        for (int x = 2; x < cols - 2; x++)
+        {
+            for (int y = 2; y < rows - 2; y++)
+            {
+                positionList.Add(new Vector2(x, y));  // 设置创建的区域
+            }
+        }
+        Vector2 pos = new Vector2(-2, 1);
+        InstantiateItems(1, enemyArray, pos);  // 随机生成1个敌人
+        int helperCount = Random.Range(1, helperArray.Length);
+        print("生成帮手数："+helperCount);
+        Vector2 pos1 = new Vector2(8, 1);
+        InstantiateItems(helperCount, helperArray, pos1);  // 随机生成帮手
+       
+        
+
+    }
+
+    //随机生成一个位置 update by whx
+    private Vector2 RandomPosition()
+    {
+        int positionIndex = Random.Range(0, positionList.Count);
+        Vector2 pos = positionList[positionIndex];
+        positionList.RemoveAt(positionIndex);
+        return pos;
+    }
+
+    // 从数组从随机选择一个物体 update by whx
+    private GameObject RandomPrefab(GameObject[] prefabs)
+    {
+        int index = Random.Range(0, prefabs.Length);
+        return prefabs[index];
+    }
+
+    // 随机生成物体 update by whx
+    // 生成数量
+    // 物体数组
+    private void InstantiateItems(int count , GameObject[] prefabs, Vector2 pos)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            //Vector2 pos = RandomPosition();  // 获取一个随机位
+            GameObject prefab = RandomPrefab(prefabs);  // 随机获取一个物体
+            GameObject go = GameObject.Instantiate(prefab, pos, Quaternion.identity);
+            go.transform.SetParent(mapHolder);
+        }
+    }
+
+
 }
