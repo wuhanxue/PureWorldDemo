@@ -36,7 +36,6 @@
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ProfilerModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
-/reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
@@ -211,8 +210,6 @@
 /define:UNITY_2018_3_14
 /define:UNITY_2018_3
 /define:UNITY_2018
-/define:PLATFORM_ARCH_64
-/define:UNITY_64
 /define:UNITY_INCLUDE_TESTS
 /define:UNITY_ANALYTICS
 /define:ENABLE_AUDIO
@@ -262,12 +259,11 @@
 /define:ENABLE_VIDEO
 /define:ENABLE_CUSTOM_RENDER_TEXTURE
 /define:ENABLE_LOCALIZATION
-/define:PLATFORM_STANDALONE_OSX
+/define:PLATFORM_STANDALONE_WIN
 /define:PLATFORM_STANDALONE
-/define:UNITY_STANDALONE_OSX
+/define:UNITY_STANDALONE_WIN
 /define:UNITY_STANDALONE
 /define:ENABLE_SUBSTANCE
-/define:ENABLE_GAMECENTER
 /define:ENABLE_RUNTIME_GI
 /define:ENABLE_MOVIES
 /define:ENABLE_NETWORK
@@ -277,12 +273,12 @@
 /define:ENABLE_CLOUD_SERVICES_ANALYTICS
 /define:ENABLE_CLOUD_SERVICES_PURCHASING
 /define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
-/define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
+/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+/define:ENABLE_EVENT_QUEUE
 /define:ENABLE_CLUSTER_SYNC
 /define:ENABLE_CLUSTERINPUT
 /define:ENABLE_VR
 /define:ENABLE_AR
-/define:ENABLE_SPATIALTRACKING
 /define:ENABLE_WEBSOCKET_HOST
 /define:ENABLE_MONO
 /define:NET_STANDARD_2_0
@@ -299,7 +295,9 @@
 /define:ENABLE_VSTU
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
+"Assets/Enemy.cs"
+"Assets/Helper.cs"
 "Assets/Scripts/ChangeScene.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/ShowDialog.cs"
 "Assets/Scripts/WarControl.cs"
-"Assets/ShowDialog.cs"
