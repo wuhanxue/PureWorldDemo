@@ -6,11 +6,6 @@
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
-/reference:"Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll"
-/reference:"Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll"
-/reference:"Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll"
-/reference:"Library/ScriptAssemblies/Unity.TextMeshPro.dll"
-/reference:"Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -73,6 +68,11 @@
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/UnityEditor.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/Managed/Unity.Locator.dll"
+/reference:"Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll"
+/reference:"Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll"
+/reference:"Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll"
+/reference:"Library/ScriptAssemblies/Unity.TextMeshPro.dll"
+/reference:"Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 /reference:"/Applications/Unity/Hub/Editor/2018.3.14f1/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
@@ -295,9 +295,9 @@
 /define:ENABLE_VSTU
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"Assets/Enemy.cs"
-"Assets/Helper.cs"
 "Assets/Scripts/ChangeScene.cs"
+"Assets/Scripts/Enemy.cs"
+"Assets/Scripts/Helper.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/ShowDialog.cs"
 "Assets/Scripts/WarControl.cs"

@@ -295,9 +295,9 @@
 /define:ENABLE_VSTU
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"Assets/Enemy.cs"
-"Assets/Helper.cs"
 "Assets/Scripts/ChangeScene.cs"
+"Assets/Scripts/Enemy.cs"
+"Assets/Scripts/Helper.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/ShowDialog.cs"
 "Assets/Scripts/WarControl.cs"
