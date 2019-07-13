@@ -21,6 +21,7 @@ public class WarControl : MonoBehaviour
     private List<Vector2> positionList = new List<Vector2>();  // 存放位置信息  update by whx
 
     public GameObject actionPanel;
+    public GameObject skillPanel;
     public GameObject hpInfoPlayer;
     public GameObject hpInfoEnemy;
     public GameObject warInfoText;
@@ -40,6 +41,7 @@ public class WarControl : MonoBehaviour
         warInfoText.GetComponent<Text>().text = "战斗开始！";
         StartCoroutine(ScrollToBottom());
         InstantiateMap();  // 初始化地图及物品
+        skillPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -83,6 +85,30 @@ public class WarControl : MonoBehaviour
     }
 
     /// <summary>
+    /// 技能按钮点击事件
+    /// </summary>
+    public void SkillButtonOnclick()
+    {
+        StartCoroutine(Skill());
+    }
+
+    /// <summary>
+    /// 技能1按钮点击事件
+    /// </summary>
+    public void SkillButton1Onclick()
+    {
+        StartCoroutine(Skill_1());
+    }
+
+    /// <summary>
+    /// 技能2按钮点击事件
+    /// </summary>
+    public void SkillButton2Onclick()
+    {
+        StartCoroutine(Skill_2());
+    }
+
+    /// <summary>
     /// 攻击携程
     /// </summary>
     /// <returns></returns>
@@ -104,6 +130,44 @@ public class WarControl : MonoBehaviour
     {
         actionPanel.SetActive(false);
         StartCoroutine(Player_Defend());
+        StartCoroutine(Enemy_Attack());
+        actionPanel.SetActive(true);
+        yield return null;
+    }
+
+    /// <summary>
+    /// 技能携程
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Skill()
+    {
+        skillPanel.SetActive(!skillPanel.activeSelf);
+        yield return null;
+    }
+
+    /// <summary>
+    /// 技能1
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Skill_1()
+    {
+        skillPanel.SetActive(false);
+        StartCoroutine(Player_Attack());
+        StartCoroutine(Enemy_Attack());
+        actionPanel.SetActive(true);
+        yield return null;
+    }
+
+    /// <summary>
+    /// 技能2
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Skill_2()
+    {
+        actionPanel.SetActive(false);
+        skillPanel.SetActive(false);
+        warInfoText.GetComponent<Text>().text += "\n玩家不会这个技能！";
+        StartCoroutine(ScrollToBottom());
         StartCoroutine(Enemy_Attack());
         actionPanel.SetActive(true);
         yield return null;
